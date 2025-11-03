@@ -136,18 +136,6 @@ export function About() {
                 <p className="text-lg text-gray-900 mb-2">Summa Cum Laude</p>
                 <p className="text-gray-600">Highest Honors</p>
               </motion.div>
-
-              <motion.div
-                className="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-default"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="inline-flex p-4 bg-gray-100 rounded-full mb-4">
-                  <Trophy className="w-8 h-8 text-gray-900" />
-                </div>
-                <p className="text-lg text-gray-900 mb-2">Hackathon Winner</p>
-                <p className="text-gray-600">First Place Award</p>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>
