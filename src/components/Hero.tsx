@@ -62,7 +62,7 @@ export function Hero() {
               <span>(202) 299-7369</span>
             </div>
             <a
-              href="https://github.com/omarhamdan010"
+              href="https://github.com/omarayman23"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-black transition-colors"
@@ -71,7 +71,7 @@ export function Hero() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/omar-hamdan-010"
+              href="https://www.linkedin.com/in/omar-hamdan-74674933b/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-black transition-colors"
