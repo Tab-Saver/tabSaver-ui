@@ -1,9 +1,8 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Github, ExternalLink, GitPullRequest } from "lucide-react";
+import { Github, ExternalLink, GitPullRequest, Code2 } from "lucide-react";
 import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const contribution = {
   title: "TEAMMATES",
@@ -11,7 +10,6 @@ const contribution = {
   description:
     "Fixed email validation using Angular and prevented expensive E2E and accessibility tests from running on every commit.",
   tech: ["GitHub", "Java", "Shell", "Angular", "HTML"],
-  image: "https://images.unsplash.com/photo-1652111865960-15f4a46a7688?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
   githubUrl: "https://github.com/TEAMMATES/teammates",
   demoUrl: "https://teammatesv4.appspot.com/web/front/home",
   stats: {
@@ -42,75 +40,74 @@ export function OpenSource() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="grid md:grid-cols-5 gap-6">
-              {/* Project Image */}
-              <div className="md:col-span-2 relative h-64 md:h-auto overflow-hidden">
-                <ImageWithFallback
-                  src={contribution.image}
-                  alt={contribution.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/80 md:to-white"></div>
-                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-gray-100 border border-gray-300 rounded-full">
-                  <GitPullRequest className="w-4 h-4 text-gray-900" />
-                  <span className="text-sm text-gray-900">Active Contributor</span>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="md:col-span-3 p-6 md:p-8">
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="text-2xl text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
-                      {contribution.title}
-                    </h3>
-                    <p className="text-gray-700">{contribution.subtitle}</p>
-                  </div>
-                  <div className="flex gap-3">
-                    <a
-                      href={contribution.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
-                      title="View Live Site"
-                    >
-                      <ExternalLink className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
-                    </a>
-                    <a
-                      href={contribution.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
-                      title="View on GitHub"
-                    >
-                      <Github className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
-                    </a>
-                  </div>
+            <div className="p-6 md:p-8">
+              <div className="flex items-start gap-6">
+                {/* Project Icon */}
+                <div className="flex-shrink-0 p-6 bg-gray-100 rounded-xl border-2 border-gray-900">
+                  <Code2 className="w-12 h-12 text-gray-900" />
                 </div>
 
-                <p className="text-gray-700 mb-6">{contribution.description}</p>
-
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
-                    <p className="text-xs text-gray-600 mb-1">Contributions</p>
-                    <p className="text-gray-900">{contribution.stats.commits}</p>
+                {/* Project Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <h3 className="text-2xl text-gray-900 group-hover:text-gray-700 transition-colors">
+                          {contribution.title}
+                        </h3>
+                        <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 border border-gray-300 rounded-full">
+                          <GitPullRequest className="w-4 h-4 text-gray-900" />
+                          <span className="text-sm text-gray-900">Active Contributor</span>
+                        </div>
+                      </div>
+                      <p className="text-gray-700">{contribution.subtitle}</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <a
+                        href={contribution.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
+                        title="View Live Site"
+                      >
+                        <ExternalLink className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
+                      </a>
+                      <a
+                        href={contribution.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
+                        title="View on GitHub"
+                      >
+                        <Github className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
+                      </a>
+                    </div>
                   </div>
-                  <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
-                    <p className="text-xs text-gray-600 mb-1">Impact</p>
-                    <p className="text-gray-900">{contribution.stats.impact}</p>
-                  </div>
-                </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {contribution.tech.map((tech, i) => (
-                    <Badge
-                      key={i}
-                      variant="outline"
-                      className="bg-gray-100 border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+                  <p className="text-gray-700 mb-6">{contribution.description}</p>
+
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                      <p className="text-xs text-gray-600 mb-1">Contributions</p>
+                      <p className="text-gray-900">{contribution.stats.commits}</p>
+                    </div>
+                    <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                      <p className="text-xs text-gray-600 mb-1">Impact</p>
+                      <p className="text-gray-900">{contribution.stats.impact}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {contribution.tech.map((tech, i) => (
+                      <Badge
+                        key={i}
+                        variant="outline"
+                        className="bg-gray-100 border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
