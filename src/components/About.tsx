@@ -1,5 +1,4 @@
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
@@ -21,7 +20,7 @@ const jobs = [
     description: [
       "Coordinated and managed cargo loading, unloading, and storage for multiple shipments daily, ensuring compliance with safety regulations and company standards, resulting in zero safety incidents during tenure.",
       "Conducted inventory audits and maintained accurate tracking of shipments, streamlining logistics processes and reducing errors by 15%.",
-      "Collaborated with airline staff and warehouse teams to optimize turnaround times, improving operational efficiency and on-time delivery performance."
+      "Collaborated with airline staff and warehouse teams to optimize turnaround times, improving operational efficiency and on-time delivery performance.",
     ],
   },
   {
@@ -29,26 +28,28 @@ const jobs = [
     company: "Swissport USA Inc",
     location: "Dulles, VA",
     period: "Jun 2024 - Oct 2025",
-    iconUrl: "https://yt3.googleusercontent.com/DtPCJZAodX0vE-b2swK7NKSCF5TFoqUJEsld-7R1LpE4UctbGsRK-qA8KUJwVShUa503HT8Irw=s900-c-k-c0x00ffffff-no-rj",
+    iconUrl:
+      "https://yt3.googleusercontent.com/DtPCJZAodX0vE-b2swK7NKSCF5TFoqUJEsld-7R1LpE4UctbGsRK-qA8KUJwVShUa503HT8Irw=s900-c-k-c0x00ffffff-no-rj",
     type: "past",
     description: [
       "Oversaw aircraft ground handling operations, including baggage handling, aircraft marshaling, and fueling coordination, ensuring timely departures and arrivals.",
       "Implemented safety protocols for equipment handling and aircraft servicing, reducing workplace incidents and maintaining compliance with FAA and airline standards.",
-      "Provided exceptional customer service during irregular operations, assisting passengers and resolving issues efficiently while maintaining a professional demeanor under high-pressure situations."
+      "Provided exceptional customer service during irregular operations, assisting passengers and resolving issues efficiently while maintaining a professional demeanor under high-pressure situations.",
     ],
   },
   {
     title: "Volunteer, Writer & Designer",
-    company: "ABrightSpot",
+    company: "A Bright Spot",
     location: "One Loudoun, VA",
     period: "Nov 2024 - Dec 2024",
-    iconUrl: "https://s3.us-east-1.amazonaws.com/files.galaxydigital.com/4677/agency/151088.jpg?20250111142103",
+    iconUrl:
+      "https://s3.us-east-1.amazonaws.com/files.galaxydigital.com/4677/agency/151088.jpg?20250111142103",
     type: "past",
     description: [
       "Created and designed over 1,400 personalized greeting cards for hospitalized children, veterans, and seniors, promoting positivity and emotional well-being through art and uplifting messages.",
       "Collaborated with a volunteer team to develop themed designs for holidays and awareness events, ensuring each card met organization guidelines for color, tone, and compassion.",
       "Wrote inspiring, heartfelt messages tailored to different audiences, blending creativity and empathy to foster connection and comfort among recipients.",
-      "Assisted in organizing community art events and volunteer workshops, encouraging youth and families to participate in acts of kindness through handmade designs."
+      "Assisted in organizing community art events and volunteer workshops, encouraging youth and families to participate in acts of kindness through handmade designs.",
     ],
   },
   {
@@ -56,12 +57,13 @@ const jobs = [
     company: "Macy's",
     location: "Leesburg, VA",
     period: "Mar 2023 - Dec 2024",
-    iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Macy%27s_logo.svg/2560px-Macy%27s_logo.svg.png",
+    iconUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Macy%27s_logo.svg/2560px-Macy%27s_logo.svg.png",
     type: "past",
     description: [
       "Exceeded sales targets consistently, achieving over $200,000 in total sales through personalized customer engagement and product recommendations.",
       "Opened 10 new credit accounts by leveraging product knowledge and persuasive communication, contributing directly to store revenue growth.",
-      "Trained and mentored new sales associates on sales techniques, customer service, and store processes, enhancing team performance and efficiency."
+      "Trained and mentored new sales associates on sales techniques, customer service, and store processes, enhancing team performance and efficiency.",
     ],
   },
   {
@@ -74,7 +76,7 @@ const jobs = [
     description: [
       "Supervised a team of 10+ employees, delegating tasks, maintaining schedules, and ensuring smooth day-to-day theater operations.",
       "Monitored customer service quality and resolved conflicts effectively, maintaining high customer satisfaction ratings.",
-      "Assisted management with staff training, performance evaluations, and operational improvements, increasing team productivity and engagement."
+      "Assisted management with staff training, performance evaluations, and operational improvements, increasing team productivity and engagement.",
     ],
   },
   {
@@ -82,12 +84,13 @@ const jobs = [
     company: "Harris Teeter",
     location: "Brambleton, VA",
     period: "May 2022 - Dec 2022",
-    iconUrl: "https://imgproxy.divecdn.com/5YbgnoX-Yz0_BleIkjN0nl_QgU8Iwi79uN11PTEEMps/g:ce/rs:fill:1200:675:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9IYXJyaXNfVGVldGVyX2xvZ29fWTdDUG5yVi5wbmc=.webp",
+    iconUrl:
+      "https://imgproxy.divecdn.com/5YbgnoX-Yz0_BleIkjN0nl_QgU8Iwi79uN11PTEEMps/g:ce/rs:fill:1200:675:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9IYXJyaXNfVGVldGVyX2xvZ29fWTdDUG5yVi5wbmc=.webp",
     type: "past",
     description: [
       "Prepared and served beverages and food items according to company standards, ensuring speed, accuracy, and quality in a high-volume environment.",
       "Delivered exceptional customer service, building repeat business and resolving issues promptly to maintain a positive store reputation.",
-      "Managed cash register operations and inventory restocking, contributing to efficient store operations and minimizing waste."
+      "Managed cash register operations and inventory restocking, contributing to efficient store operations and minimizing waste.",
     ],
   },
 ];
@@ -171,10 +174,13 @@ export function WorkExperience() {
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4">
-            {selectedJob?.description && selectedJob.description.length > 0 ? (
+            {selectedJob?.description?.length ? (
               <ul className="space-y-3">
                 {selectedJob.description.map((item, index) => (
-                  <li key={index} className="text-gray-700 pl-4 border-l-2 border-gray-900">
+                  <li
+                    key={index}
+                    className="text-gray-700 pl-4 border-l-2 border-gray-900"
+                  >
                     {item}
                   </li>
                 ))}
