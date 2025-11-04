@@ -1,4 +1,4 @@
-import { motion, useInView } from "motion/react"; // Corrected import
+import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
@@ -95,7 +95,6 @@ const jobs = [
   },
 ];
 
-// Renamed component to About
 export function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
