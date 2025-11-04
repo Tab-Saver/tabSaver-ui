@@ -1,8 +1,8 @@
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+
 
 const certificates = [
   {
@@ -76,7 +76,7 @@ export function Certificates() {
             {certificates.map((cert, index) => (
               <motion.a
                 key={index}
-                href={cert.credentialUrl}
+               href={cert.credentialUrl || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-6 bg-white border border-gray-300 rounded-xl hover:border-gray-900 hover:shadow-lg hover:shadow-gray-300/30 transition-all duration-300 cursor-pointer"
@@ -86,11 +86,13 @@ export function Certificates() {
               >
                 <div className="flex items-start gap-3 mb-3">
                   <div className="w-12 h-12 p-2 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300 flex items-center justify-center flex-shrink-0">
-                    <ImageWithFallback
-                      src={cert.iconUrl}
-                      alt={`${cert.issuer} logo`}
-                      className="w-full h-full object-contain rounded"
-                    />
+                <ImageWithFallback
+                  src={cert.iconUrl}
+                  loading="lazy"
+                  alt={`${cert.issuer} logo`}
+                  className="w-full h-full object-contain rounded"
+                />
+
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-gray-900 mb-1 group-hover:text-gray-700 transition-colors">
