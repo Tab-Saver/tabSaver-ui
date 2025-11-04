@@ -101,10 +101,11 @@ export function Projects() {
               return (
                 <motion.div
                   key={index}
+                  // FIX: Default border is transparent, hover is gray. Winner stays green.
                   className={`group rounded-2xl transition-all duration-500 overflow-hidden relative ${
                     isHackathonWinner
                       ? "bg-white border-2 border-green-600 hover:border-green-500 hover:shadow-2xl hover:shadow-green-200/50"
-                      : "bg-white border-2 border-gray-900 hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
+                      : "bg-white border-2 border-transparent hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
                   }`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
