@@ -85,7 +85,8 @@ export function Certificates() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-12 h-12 p-2 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300 flex items-center justify-center flex-shrink-0">
+                  {/* FIX: Removed p-2 from this div */}
+                  <div className="w-12 h-12 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300 flex items-center justify-center flex-shrink-0">
                 <ImageWithFallback
                   src={cert.iconUrl}
                   loading="lazy"
