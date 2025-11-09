@@ -70,8 +70,8 @@ export function Contact() {
           })}
         </div>
 
-        <Card className="p-8 md:p-12">
-          <div className="max-w-2xl mx-auto">
+        <Card className="p-8 md:p-12 max-w-4xl mx-auto">
+          <div className="w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="email">Your Email</Label>
