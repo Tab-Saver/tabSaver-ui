@@ -24,7 +24,7 @@ export function Hero() {
                 Download Extension
               </Button>
               <Button size="lg" variant="outline" className="gap-2" asChild>
-                <a href="https://github.com/omarayman23" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/omarayman23/tabSaver-ui" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5" />
                   View on GitHub
                 </a>
