@@ -67,23 +67,27 @@ export function HowToUse() {
               return (
                 <Card 
                   key={step.title} 
-                  className={`p-6 hover:shadow-lg transition-shadow ${step.highlight ? 'border-primary border-2' : ''}`}
+                  className={`p-6 hover:shadow-lg transition-all duration-300 ${
+                    step.highlight 
+                      ? 'border-primary border-2 bg-gradient-to-br from-primary/5 to-background' 
+                      : 'border'
+                  }`}
                 >
                   <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-lg ${step.highlight ? 'bg-primary text-primary-foreground' : 'bg-primary/10'} flex items-center justify-center`}>
-                      <Icon className="w-8 h-8" />
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${step.highlight ? 'from-primary to-primary/80' : 'from-primary/10 to-primary/5'} flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-110`}>
+                      <Icon className={`w-8 h-8 ${step.highlight ? 'text-primary-foreground' : 'text-primary'}`} />
                     </div>
-                    <div className="flex-1 space-y-2">
-                      <div className="flex items-center gap-3">
+                    <div className="flex-1 space-y-3">
+                      <div className="flex items-center gap-3 flex-wrap">
                         <span className="text-2xl font-bold text-muted-foreground">0{index + 1}</span>
                         <CardTitle className="text-2xl">{step.title}</CardTitle>
                         {step.highlight && (
-                          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                             Important
                           </span>
                         )}
                       </div>
-                      <CardDescription className="text-base">
+                      <CardDescription className="text-base leading-relaxed">
                         {step.description}
                       </CardDescription>
                     </div>
