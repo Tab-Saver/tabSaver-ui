@@ -46,14 +46,15 @@ export function Hero() {
                 </a>
               </Button>
             </div>
-          </div>
+            </div>
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-tr from-chart-1/20 to-chart-2/20 blur-3xl rounded-full"></div>
             <Logo className="relative w-72 h-72" />
           </div>
         </div>
+      </div>
       </section>
-    <HowToUseDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
+      <HowToUseDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </>
   );
 }
