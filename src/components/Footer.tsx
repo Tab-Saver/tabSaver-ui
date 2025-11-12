@@ -1,5 +1,4 @@
 import { Github, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -17,24 +16,19 @@ export function Footer() {
             <h4>Resources</h4>
             <ul className="space-y-2 opacity-80">
               <li>
-                <a href="/#features" className="hover:opacity-100 transition-opacity">
+                <a href="#features" className="hover:opacity-100 transition-opacity">
                   Features
                 </a>
               </li>
               <li>
-                <a href="/#stats" className="hover:opacity-100 transition-opacity">
+                <a href="#stats" className="hover:opacity-100 transition-opacity">
                   Statistics
                 </a>
               </li>
               <li>
-                <a href="/#contact" className="hover:opacity-100 transition-opacity">
+                <a href="#contact" className="hover:opacity-100 transition-opacity">
                   Contact
                 </a>
-              </li>
-              <li>
-                <Link to="/how-to-use" className="hover:opacity-100 transition-opacity">
-                  How to Use
-                </Link>
               </li>
               <li>
                 <a href="https://github.com/Tab-Saver/PRIVACY-POLICY" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">

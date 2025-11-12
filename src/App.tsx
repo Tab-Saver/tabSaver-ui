@@ -1,33 +1,17 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Home } from "./components/Home";
-import { HowToUse } from "./components/HowToUse";
-import { AnimatePresence, motion } from "framer-motion";
-
-function AnimatedRoutes() {
-  const location = useLocation();
-
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/how-to-use" element={<HowToUse />} />
-        </Routes>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
+import { Hero } from "./components/Hero";
+import { Features } from "./components/Features";
+import { Stats } from "./components/Stats";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <div className="min-h-screen">
+      <Hero />
+      <Features />
+      <Stats />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
